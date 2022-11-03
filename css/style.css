@@ -1,0 +1,71 @@
+:root{
+    --lightblue:rgba(142,218,252,1);
+    --graybar:rgba(234,234,234,1);
+    --active:rgba(107,115,118,1);
+    --icons: rgba(177,177,177,1);
+    --lighticons:rgba(213,249,186,1);
+}
+#app{
+    height: 100vh;
+    width:100%;
+    background: linear-gradient(180deg, rgb(21, 124, 119) 15%, rgb(200, 200, 200) 15%);
+}
+#app > .container{
+    height:90%;
+}
+.border-lightgrey{
+    border: 1px solid gray;
+}
+.contact-bar{
+ background-color: var(--graybar);
+ height: 70px;
+}
+.notification{
+    background-color: var(--lightblue);
+    height: 80px;;
+
+}
+.seachbar{
+height: 50px;
+}
+.contacts-wrapper{
+    height: calc(100% - 200px );
+    overflow: hidden;
+}
+.contacts , .chat{
+    height: 100%;
+    overflow-y: auto;
+
+}
+img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.messagger-wrapper{
+    height: calc(100% - 140px);
+    background: url(../img/mine.jpg) repeat;
+    overflow:hidden;
+}
+.message{
+    position:relative;
+    min-width: 40%;
+    max-width: 60%;
+    font-size: 15px;
+    margin:5px 0px;
+    padding: 15px 15px 20px;
+    background:rgb(255,255,255);
+    border-radius:10px;
+}
+.chat{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+
+}
+.chat.send{
+    align-items: flex-end;
+}
+.chat.send .message{
+    background-color: lime;
+}
