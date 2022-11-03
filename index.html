@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@3.2.41/dist/vue.global.min.js"></script>
     <title>Document</title>
+    <script src="./js/script.js" defer></script>
 </head>
 
 <body>
@@ -56,7 +57,7 @@
                     </div>
                     <div class="contacts">
 
-                        <div class="contact " v-for="(item , index ) in filteredContacts">
+                        <div class="contact " v-for="(item , index ) in filteredContacts " :key="item.id"  class="{'contact-active': index === currentIndex}" @click="chat(item.id)">
                             <div><img class="mt-2" :src="'./img/avatar' + item.avatar + '.jpg'">
                             </div>
                             <div class="testo-messaggio">
@@ -72,13 +73,20 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm12 col-md-8 h-100 border-lightgrey">
-                    <div class="contact-bar">
-
+                    <div class="contact-bar d-flex justify-content-between align-items-center p-2">
+                        <div><img class="" :src="'./img/avatar' + contacts[currentIndex].avatar + '.jpg'">
+                            <span>{{contacts[currentIndex].name}}</span>
+                        </div> 
+                        <div>
+                            {{contacts[currentIndex].messages[contacts[currentIndex].messages.length - 1].date}}</div>
                     </div>
                     <div class="messagger-wrapper">
-                        <div class="chat ">
-                            <div class="message">ciao</div>
-                            <div class="message send">ciao</div>
+                        <div class="chat  ">
+                           
+                                
+                                <div v-for="(chat, index) in contacts[currentIndex].messages" :class="chat.status " class="text-center">
+                                    <p>{{chat.message}}</p>
+                           
                         </div>
                     </div>
                     <div class="contact-bar"></div>
@@ -87,9 +95,9 @@
 
 
         </div>
+     </div>
     </div>
-
-    <script src="./js/script.js"></script>
+  
 </body>
 
 </html>

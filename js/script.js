@@ -187,6 +187,12 @@ createApp({
                 return name.includes(this.searchContact.toLowerCase());
             })
         }
+
     },
+    methods: {
+        chat(id){
+            this.currentIndex = this.contacts.findIndex((item)=> id === item.id )
+            console.log(id)
+        },
     
-}).mount('#app')
+}}).mount('#app')

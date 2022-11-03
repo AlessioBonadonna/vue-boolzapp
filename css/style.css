@@ -7,6 +7,7 @@
     --white:#ffffff;
 
 
+
 }
 #app{
     height: 100vh;
@@ -72,12 +73,22 @@ img{
     align-items: flex-start;
 
 }
-.chat .send{
-    align-self: flex-end !important;
-    background-color: lime;
+.chat p{
+    margin-bottom:0;
 }
-.chat .send .message{
-    background-color: lime;
+.chat .sent{
+    align-self: flex-end !important;
+    background-color: var(--lighticons);
+    border-radius: 10px;
+    padding:8px;
+    margin: 3px 3px;
+    
+}
+.chat .received{
+    background-color: var(--graybar);
+    border-radius: 10px;
+    padding:8px;
+    margin: 3px 3px;
 }
 
 .bells{
@@ -93,8 +104,8 @@ img{
     font-size: 17px;
 }
 .btn-search {
-    background-color: var(--midgray);
-    color: var(--midgray);
+    background-color: var(--graybar);
+    color: var(--icons);
     font-size: 13px;
     padding: 5px 15px;
     border: none;
@@ -112,7 +123,15 @@ img{
     height: 70px;
     width: 100%;
     display: flex;
-    padding-left: 5px;
+    cursor: pointer;
+   
+}
+.contact:hover{
+    background-color: var(--graybar);
+
+}
+.contact-active{
+    background-color: var(--graybar);
 }
 .testo-messaggio{
     overflow: hidden;
