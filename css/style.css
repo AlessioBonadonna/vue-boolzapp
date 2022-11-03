@@ -63,9 +63,10 @@ img{
     align-items: flex-start;
 
 }
-.chat.send{
-    align-items: flex-end;
+.chat .send{
+    align-items: flex-end !important;
+    background-color: lime;
 }
-.chat.send .message{
+.chat .send .message{
     background-color: lime;
 }
