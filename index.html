@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.1.0/build/global/luxon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@3.2.41/dist/vue.global.min.js"></script>
     <title>Document</title>
     <script src="./js/script.js" defer></script>
@@ -52,12 +53,13 @@
 
                         <button class="btn-search"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
 
-                        <input class="w-100" type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input class="w-100" type="text" placeholder="Cerca " v-model.trim="searchContact">
 
                     </div>
                     <div class="contacts">
 
-                        <div class="contact " v-for="(item , index ) in filteredContacts " :key="item.id"  class="{'contact-active': index === currentIndex}" @click="chat(item.id)">
+                        <div class="contact " v-for="(item , index ) in filteredContacts " :key="item.id"
+                            class="{'contact-active': index === currentIndex}" @click="chat(item.id)">
                             <div><img class="mt-2" :src="'./img/avatar' + item.avatar + '.jpg'">
                             </div>
                             <div class="testo-messaggio">
@@ -76,28 +78,41 @@
                     <div class="contact-bar d-flex justify-content-between align-items-center p-2">
                         <div><img class="" :src="'./img/avatar' + contacts[currentIndex].avatar + '.jpg'">
                             <span>{{contacts[currentIndex].name}}</span>
-                        </div> 
+                        </div>
                         <div>
                             {{contacts[currentIndex].messages[contacts[currentIndex].messages.length - 1].date}}</div>
                     </div>
                     <div class="messagger-wrapper">
                         <div class="chat  ">
-                           
-                                
-                                <div v-for="(chat, index) in contacts[currentIndex].messages" :class="chat.status " class="text-center">
-                                    <p>{{chat.message}}</p>
-                           
+
+
+                            <div v-for="(chat, index) in contacts[currentIndex].messages" :class="chat.status "
+                                class="text-center">
+                                <p>{{chat.message}}</p>
+
+                            </div>
                         </div>
+                       
                     </div>
-                    <div class="contact-bar"></div>
+                    <div class=" contact-bar-bottom justify-content-around d-flex align-items-center pt-3 px-2 ">
+                       
+                           
+                           <i class="fa-regular fa-face-smile me-1"></i>
+                       
+                        
+                           <input  class="rounded-3 border-1 w-100"type="text" name="" v-model.trim="newMessage" @keyup.enter="sendMessage">
+                      
+                          
+                           <i class="fa-solid fa-microphone ms-1"></i> 
+                     
+                   </div>
                 </div>
+
+
             </div>
-
-
         </div>
-     </div>
     </div>
-  
+
 </body>
 
 </html>
