@@ -42,6 +42,10 @@ background-color: var(--graybar);
     overflow-y: auto;
 
 }
+.contacts{
+    height: calc(100% - 200px);
+    
+}
 img{
     width: 50px;
     height: 50px;
@@ -69,7 +73,7 @@ img{
 
 }
 .chat .send{
-    align-items: flex-end !important;
+    align-self: flex-end !important;
     background-color: lime;
 }
 .chat .send .message{
@@ -89,7 +93,7 @@ img{
     font-size: 17px;
 }
 .btn-search {
-    background-color: var(--white);
+    background-color: var(--midgray);
     color: var(--midgray);
     font-size: 13px;
     padding: 5px 15px;
@@ -103,3 +107,17 @@ img{
     padding: 5px 15px;
     border: none;
 }
+.contact{
+    border: 0.2px solid black;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    padding-left: 5px;
+}
+.testo-messaggio{
+    overflow: hidden;
+    height: 60px;
+    width: 80%;
+     margin-left:5px; 
+}
+

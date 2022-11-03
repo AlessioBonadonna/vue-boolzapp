@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.41/dist/vue.global.min.js"></script>
     <title>Document</title>
 </head>
 
@@ -21,7 +22,8 @@
                 <div class="col-12 col-sm-12 col-md-4 h-100 border-lightgrey">
                     <div class="contact-bar d-flex align-items-center justify-content-between ">
                         <div class="d-flex align-items-center">
-                            <img  class="d-flex align-items-center justify-content-center"src="./img/avatar_io.jpg" alt="Io">
+                            <img class="d-flex align-items-center justify-content-center" src="./img/avatar_io.jpg"
+                                alt="Io">
                             <span>Sofia</span>
                         </div>
                         <div>
@@ -39,22 +41,34 @@
                         </div>
                         <div class="notifiche text-dark ps-2">
                             <span class="d-block">Ricevi notifiche di nuovi messaggi</span>
-                            <a href="#nogo" class="text-decoration-none"><span id="attiva-notifiche" class="d-block">Attiva notifiche desktop</span></a>
+                            <a href="#nogo" class="text-decoration-none"><span id="attiva-notifiche"
+                                    class="d-block">Attiva notifiche desktop</span></a>
                         </div>
-                        
+
 
                     </div>
                     <div class="seachbar d-flex aling-items-center">
 
                         <button class="btn-search"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
-                    
-                    <input class="w-100" type="text" placeholder="Cerca o inizia una nuova chat">
+
+                        <input class="w-100" type="text" placeholder="Cerca o inizia una nuova chat">
 
                     </div>
                     <div class="contacts">
-                        <div class="contact">
-                            <img src="./img/avatar_1.jpg" alt="1_">
+
+                        <div class="contact " v-for="(item , index ) in filteredContacts">
+                            <div><img class="mt-2" :src="'./img/avatar' + item.avatar + '.jpg'">
+                            </div>
+                            <div class="testo-messaggio">
+                                <h4>{{item.name}}</h4>
+                                <p>{{item.messages[item.messages.length - 1].message}}</p>
+                            </div>
+                            <div>
+                                {{item.messages[item.messages.length - 1].date}}</div>
                         </div>
+
+
+
                     </div>
                 </div>
                 <div class="col-12 col-sm12 col-md-8 h-100 border-lightgrey">
@@ -74,6 +88,8 @@
 
         </div>
     </div>
+
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
