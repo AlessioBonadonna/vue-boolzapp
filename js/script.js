@@ -1,4 +1,3 @@
-
 //luxon for the date
 var DateTime = luxon.DateTime;
 
@@ -225,5 +224,5 @@ createApp({
             this.contacts[this.currentIndex].messages.push(newSentMessage);
             }, 1000)
         },
-    
+       
 }}).mount('#app')
