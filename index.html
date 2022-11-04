@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/luxon@3.1.0/build/global/luxon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@3.2.41/dist/vue.global.min.js"></script>
-    <title>Document</title>
+    <title>BoolZapp</title>
     <script src="./js/script.js" defer></script>
 </head>
 
@@ -22,18 +22,18 @@
         <div class="container">
             <div class="row h-100 g-0 bg-white">
                 <div class="col-12 col-sm-12 col-md-4 h-100 border-lightgrey">
-                    <div class="contact-bar d-flex align-items-center justify-content-between ">
+                    <div class="contact-bar d-flex align-items-center justify-content-between profile ">
                         <div class="d-flex align-items-center">
                             <img class="d-flex align-items-center justify-content-center" src="./img/avatar_io.jpg"
                                 alt="Io">
                             <span>Sofia</span>
                         </div>
                         <div>
-                            <i class="fa-solid fa-circle-notch pe-1"></i>
+                            <i class="fa-solid fa-circle-notch pe-1 icon"></i>
 
-                            <i class="fa-solid fa-message pe-1"></i>
+                            <i class="fa-solid fa-message pe-1 icon"></i>
 
-                            <i class="fa-solid fa-ellipsis-vertical pe-1"></i>
+                            <i class="fa-solid fa-ellipsis-vertical pe-1 icon"></i>
                         </div>
 
                     </div>
@@ -51,9 +51,9 @@
                     </div>
                     <div class="seachbar d-flex aling-items-center">
 
-                        <button class="btn-search"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+                        <button class="btn-search"><i class="fa-sharp fa-solid fa-magnifying-glass icon"></i></button>
 
-                        <input class="w-100" type="text" placeholder="Cerca " v-model.trim="searchContact">
+                        <input class="w-100 p-2" type="text" placeholder="Cerca " v-model.trim="searchContact">
 
                     </div>
                     <div class="contacts">
@@ -75,14 +75,27 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm12 col-md-8 h-100 border-lightgrey">
-                    <div class="contact-bar d-flex justify-content-between align-items-center p-2">
-                        <div><img class="" :src="'./img/avatar' + contacts[currentIndex].avatar + '.jpg'">
-                            <span>{{contacts[currentIndex].name}}</span>
-                        </div>
+                    <div class="contact-bar d-flex align-items-center p-2 g-0 justify-content-between ">
+
+
                         <div>
-                            {{contacts[currentIndex].messages[contacts[currentIndex].messages.length - 1].date}}</div>
+                            <img class="d-block" :src="'./img/avatar' + contacts[currentIndex].avatar + '.jpg'">
+                        </div>
+                        <div class="ms-2">
+                            <span class="d-block ">{{contacts[currentIndex].name}}</span>
+                            <span > ultimo accesso
+                                {{contacts[currentIndex].messages[contacts[currentIndex].messages.length -
+                                1].date}}</span>
+                        </div>
+                        
+                        <div class="icons-chat align-items-center">
+                            <i class="fa-sharp fa-solid fa-magnifying-glass icon "></i>
+                            <i class="fa-solid fa-paperclip icon"></i>
+                            <i class="fa-solid fa-ellipsis-vertical  icon"></i>
+                        </div>
                     </div>
-                    <div class="messagger-wrapper">
+
+                    <div class="messagger-wrapper p-5">
                         <div class="chat  ">
 
 
@@ -92,20 +105,25 @@
 
                             </div>
                         </div>
-                       
+
                     </div>
-                    <div class=" contact-bar-bottom justify-content-around d-flex align-items-center pt-3 px-2 ">
-                       
-                           
-                           <i class="fa-regular fa-face-smile me-1"></i>
-                       
-                        
-                           <input  class="rounded-3 border-1 w-100"type="text" name="" v-model.trim="newMessage" @keyup.enter="sendMessage">
-                      
-                          
-                           <i class="fa-solid fa-microphone ms-1"></i> 
-                     
-                   </div>
+                    <div class=" contact-bar-bottom justify-content-between d-flex align-items-center pt-3 px-2 ">
+
+
+                        <i class="fa-regular fa-face-smile mx-3 icon" id="smile"></i>
+
+
+                        <input class="rounded-3 border-0 w-100 p-1" type="text" name="" v-model.trim="newMessage"
+                            @keyup.enter="sendMessage">
+
+                        <div class="mx-3">
+
+                            <i class="fa-solid fa-paper-plane my-3 icon" id="invio" v-show="newMessage != ''"
+                                @click="sendMessage"> </i>
+                            <i class="fa-solid fa-microphone my-3  icon " id="mic" v-show="newMessage==''"></i>
+                        </div>
+
+                    </div>
                 </div>
 
 

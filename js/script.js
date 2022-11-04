@@ -1,3 +1,5 @@
+
+//luxon for the date
 var DateTime = luxon.DateTime;
 
 const FORMATO_ORA = "dd/MM/yyyy HH:mm:ss";
@@ -10,7 +12,7 @@ createApp({
             currentIndex: 0,
             newMessage: '',
             searchContact: '',
-            // messageIndex: 0,
+         
             contacts: [
                 {
                     name: 'Michele',
@@ -196,7 +198,7 @@ createApp({
     methods: {
         chat(id){
             this.currentIndex = this.contacts.findIndex((item)=> id === item.id )
-            console.log(id)
+           
         },
         sendMessage(){
             if(!this.newMessage) return;
@@ -213,8 +215,8 @@ createApp({
         },
         risposta(){
             setTimeout(()=>{
-                const d = new Date();
-            let newDate = d.toDateString();
+                const dat = new Date();
+            let newDate = dat.toDateString();
             const newSentMessage = {
                 date: newDate,
                 message: 'Ok',

@@ -17,9 +17,8 @@
 #app > .container{
     height:90%;
 }
-.border-lightgrey{
-    border: 1px solid gray;
-}
+
+
 .contact-bar{
  background-color: var(--graybar);
  height: 70px;
@@ -28,6 +27,10 @@
     background-color: var(--lightblue);
     height: 80px;;
 
+}
+.icon{
+    font-size:1.5em;
+    margin-right: 0.5em;
 }
 .seachbar{
 height: 50px;
@@ -45,7 +48,11 @@ background-color: var(--graybar);
 }
 .contacts{
     height: calc(100% - 200px);
+
     
+}
+.contact{
+    padding:3px;
 }
 img{
     width: 50px;
@@ -102,12 +109,16 @@ img{
     align-items: center;
     justify-content: center;
     font-size: 17px;
+  
+}
+.bell{
+    margin-right: 0px !important;
 }
 .btn-search {
     background-color: var(--graybar);
     color: var(--icons);
     font-size: 13px;
-    padding: 5px 15px;
+    padding: 5px 10px;
     border: none;
     margin-right: 2px;
 }
@@ -140,11 +151,27 @@ img{
      margin-left:5px; 
 }
 
-#contact-bar-bottom{
+.contact-bar-bottom{
     background-color: var(--graybar);
     height: 70px;
     
     
    
+}
+#invio{
+    color:lime;
+}
+#mic{
+    color:cornflowerblue;
+}
+#smile{
+    color:rgb(22, 22, 17);
+}
+.icons-chat{
+    
+    align-self: flex-end
+}
+.border-lightgrey{
+    border: 0.5px solid var(--graybar);
 }
 
