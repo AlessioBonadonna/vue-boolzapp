@@ -11,11 +11,8 @@ createApp({
             currentIndex: 0,
             newMessage: '',
             searchContact: '',
-            showChat: false,
-            msgOpt: {
-                i: null,
-                show: false
-            },
+           
+            
             contacts: [
                 {
                     name: 'Michele',
@@ -309,7 +306,6 @@ createApp({
             }, 1000)
         },
        
-    
        
        
 }}).mount('#app')
