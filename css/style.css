@@ -184,6 +184,8 @@ img{
     right:0;
     top:10;
 }
-
+.contact-bar  .icon {
+color: var(--icons);
+}
 
 

@@ -26,7 +26,7 @@
                         <div class="d-flex align-items-center">
                             <img class="d-flex align-items-center justify-content-center ms-2" src="./img/avatar_io.jpg"
                                 alt="Io">
-                            <span class="fs-2 ms-2">Sofia</span>
+                            <span class="fs-3 fw-bolder ms-2">Sofia</span>
                         </div>
                         <div>
                             <i class="fa-solid fa-circle-notch pe-1 icon"></i>
@@ -81,8 +81,8 @@
                         <div>
                             <img class="d-block" :src="'./img/avatar' + contacts[currentIndex].avatar + '.jpg'">
                         </div>
-                        <div class="ms-2">
-                            <span class="d-block ">{{contacts[currentIndex].name}}</span>
+                        <div class="ms-2 ">
+                            <span class="d-block fw-bold ">{{contacts[currentIndex].name}}</span>
                             <span > ultimo accesso
                                 {{contacts[currentIndex].messages[contacts[currentIndex].messages.length -
                                 1].date}}</span>
