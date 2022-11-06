@@ -245,6 +245,22 @@ createApp({
                 '&#9749;',
                 '&#127847;',
             ],
+            frasi:[
+                "Ho ricevuto candele al minestrone per lavaggi a mano, così mi vestirò di rosso erba aspettando il coniglio dell'orsa polare in una notte di rugiada bollente.",
+                "Il gatto del pane sgretola la muffa arrugginita che corre lungo le bottiglie del cane del muro nero come zaffiro.",
+                "Oggi mentre il calamaio era vuoto di polpi, la lattuga venendo a sapere dall'oracolo di Delfi che la chitarra non produceva più carne in scatola, decise di prendere un Kart e farsi un giro in metropolitana.",
+                "Le finestre sono piene di giardini, viene voglia di pescare.",
+                "Non so cosa pensare della mia caffettiera sibilante che dal precipizio della mia azienda piange la regina del caffè mentre si diletta nel mio portatile facendo un barbatrucco, davvero sorprendente, che trasforma me in un audace amatore che al posto dei fiori regala colori.",
+                "I coccodrilli balzarono fuori e menarono la commessa mentre la spiaggia si riempiva di moscerini e quindi fu tutto un fracasso di ciambelle zuccherate in maniera cavalleresca.",
+                "Non saprei cosa cucinare perché il lavandino ha superato i novanta ieri sulla pentola di mio zio che ha un cappello molto veloce e si arrabbia sempre perché non mangia pezzi di carta.",
+                "Mangiavo una pera sul dromedario di mia suocera quando un pianoforte bussò all'atrocità mendicante della stanza digitale.",
+                "L'albero di aranci mi ha detto che il vento che gli gira per la testa stasera andrà a prendersi un caffè insieme al figlio del cuscino a forma di busta di latte che si trova sul mio letto",
+                "E infine, in modo strabico, la cella portò un cucchiaio di minestra alla provetta veneziana del laboratorio.",
+                "Luca mangia nell'albero ma si sveglia correndo sulla sedia.",
+                "Il canto delle sirene dell'ambulanza spinse Ulisse a buttarsi giù, ma gli amici infermieri lo trattennero.",
+                "Era più di un tavolo l'otaria, perché dovunque manca il madrileno tirerò a mandare il Lussemburgo mangiato dalle tarme.",
+                "La zia della zanzara faceva la nipote degli olivi.",
+            ]
         }     
     
     },
@@ -278,10 +294,11 @@ createApp({
         risposta(){
             setTimeout(()=>{
                 const dat = new Date();
-            let newDate = dat.toLocaleString('it-IT')
+            let newDate = dat.toLocaleString('it-IT');
+             numberRand = Math.floor(Math.random() * this.frasi.length) ;
             const newSentMessage = {
                 date: newDate,
-                message: 'Ok',
+                message: this.frasi[numberRand],
                 status: 'received'
             }
             this.contacts[this.currentIndex].messages.push(newSentMessage);
