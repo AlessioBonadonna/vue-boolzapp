@@ -99,7 +99,7 @@
                         <div class="chat  ">
 
 
-                            <div v-for="(chat, index) in contacts[currentIndex].messages" :class="chat.status "ref="msg" 
+                            <div v-for="(chat, index) in contacts[currentIndex].messages" :class="chat.status"ref="msg" 
                                 class="text-center">
                                 <p>{{chat.message}}</p>
                                 
@@ -110,8 +110,9 @@
                     </div>
                     <div class=" contact-bar-bottom justify-content-between d-flex align-items-center pt-3 px-2 ">
 
-
-                        <i class="fa-regular fa-face-smile mx-3 icon" id="smile"></i>
+                        <div >
+                            <i class="fa-regular fa-face-smile mx-3 icon rounded-5 " id="smile"></i>
+                        </div>
 
 
                         <input class="rounded-3 border-0 w-100 p-1" type="text" name="" v-model.trim="newMessage"

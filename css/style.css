@@ -31,6 +31,7 @@
 .icon{
     font-size:1.5em;
     margin-right: 0.5em;
+    cursor: pointer;
 }
 .seachbar{
 height: 50px;
@@ -167,7 +168,11 @@ img{
     cursor: pointer;
 }
 #smile{
-    color:rgb(22, 22, 17);
+    background-color: yellow;
+   cursor: pointer;
+   color:rgb(212, 209, 209)
+  
+    
 }
 
 .border-lightgrey{
@@ -179,3 +184,6 @@ img{
     right:0;
     top:10;
 }
+
+
+
