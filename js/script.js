@@ -11,7 +11,7 @@ createApp({
             currentIndex: 0,
             newMessage: '',
             searchContact: '',
-         
+            showChat: false,
             contacts: [
                 {
                     name: 'Michele',
@@ -202,7 +202,7 @@ createApp({
         sendMessage(){
             if(!this.newMessage) return;
             const dat = new Date();
-            let newDate = dat.toDateString();
+            let newDate = dat.toLocaleString('it-IT')
             const newSentMessage = {
                 date: newDate,
                 message: this.newMessage,
@@ -215,14 +215,19 @@ createApp({
         risposta(){
             setTimeout(()=>{
                 const dat = new Date();
-            let newDate = dat.toDateString();
+            let newDate = dat.toLocaleString('it-IT')
             const newSentMessage = {
                 date: newDate,
                 message: 'Ok',
                 status: 'received'
             }
             this.contacts[this.currentIndex].messages.push(newSentMessage);
+            this.$nextTick(()=> {
+                const msg =  this.$refs.msg[this.$refs.msg.length - 1 ];
+                msg.scrollIntoView({behavior: "auto", block: "end", inline: "nearest"});
+            })
             }, 1000)
         },
+       
        
 }}).mount('#app')

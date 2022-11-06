@@ -24,9 +24,9 @@
                 <div class="col-12 col-sm-12 col-md-4 h-100 border-lightgrey">
                     <div class="contact-bar d-flex align-items-center justify-content-between profile ">
                         <div class="d-flex align-items-center">
-                            <img class="d-flex align-items-center justify-content-center" src="./img/avatar_io.jpg"
+                            <img class="d-flex align-items-center justify-content-center ms-2" src="./img/avatar_io.jpg"
                                 alt="Io">
-                            <span>Sofia</span>
+                            <span class="fs-2 ms-2">Sofia</span>
                         </div>
                         <div>
                             <i class="fa-solid fa-circle-notch pe-1 icon"></i>
@@ -75,7 +75,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm12 col-md-8 h-100 border-lightgrey">
-                    <div class="contact-bar d-flex align-items-center p-2 g-0 justify-content-between ">
+                    <div class="contact-bar d-flex align-items-center p-2 g-0 position-relative ">
 
 
                         <div>
@@ -99,7 +99,7 @@
                         <div class="chat  ">
 
 
-                            <div v-for="(chat, index) in contacts[currentIndex].messages" :class="chat.status "
+                            <div v-for="(chat, index) in contacts[currentIndex].messages" :class="chat.status "ref="msg" 
                                 class="text-center">
                                 <p>{{chat.message}}</p>
                                 

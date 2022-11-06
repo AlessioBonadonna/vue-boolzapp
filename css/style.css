@@ -130,7 +130,7 @@ img{
     border: none;
 }
 .contact{
-    border: 0.2px solid black;
+    border: 0.2px solid var(--active);
     height: 70px;
     width: 100%;
     display: flex;
@@ -159,19 +159,23 @@ img{
    
 }
 #invio{
-    color:lime;
+    color:cornflowerblue;
+    cursor: pointer;
 }
 #mic{
     color:cornflowerblue;
+    cursor: pointer;
 }
 #smile{
     color:rgb(22, 22, 17);
 }
-.icons-chat{
-    
-    align-self: flex-end
-}
+
 .border-lightgrey{
     border: 0.5px solid var(--graybar);
 }
 
+.icons-chat{
+    position:absolute;
+    right:0;
+    top:10;
+}
